@@ -1,1 +1,1 @@
-echo "Hello gxylinas!"
+echo "Hello gxylinas"
