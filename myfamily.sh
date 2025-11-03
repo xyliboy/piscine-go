@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ -z "$HERO_ID" ] && exit 0
-
 curl -s https://platform.zone01.gr/assets/superhero/all.json \
-| jq -r --argjson id "$HERO_ID" '.[] | select(.id == $id) | .relatives // empty'
+| jq -r --arg id "$HERO_ID" '
+    .[]
+    | select(.id == ($id | tonumber))
+    | .connections.relatives
+    | if type == "array" then join("\n") else gsub("\n"; "\n") end
+'
