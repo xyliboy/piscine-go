@@ -5,5 +5,5 @@ curl -s https://platform.zone01.gr/assets/superhero/all.json \
     .[]
     | select(.id == ($id | tonumber))
     | .connections.relatives
-    | if type == "array" then join("\n") else gsub("\n"; "\n") end
+    | if type == "array" then join("\\n") else gsub("\n"; "\\n") end
 '
