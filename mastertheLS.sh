@@ -1,1 +1,0 @@
-ls -t --time=atime | paste -sd ","
