@@ -1,1 +1,1 @@
-R
+printf 'R\n' > r
