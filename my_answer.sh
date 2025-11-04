@@ -1,0 +1,1 @@
+head -n 31 path/to/file.txt | tail -n 1
