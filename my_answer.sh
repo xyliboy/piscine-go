@@ -1,1 +1,1 @@
-head -n 31 path/to/file.txt | tail -n 1
+head -n 207 ./mystery/streets/Richardson_Street | tail -n 1
