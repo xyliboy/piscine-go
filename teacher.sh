@@ -1,4 +1,4 @@
-INTERVIEW_ID=$(grep -R "CLUE" mystery | grep -oE 'interview_[0-9]+' | grep -oE '[0-9]+')
-echo "$INTERVIEW_ID"
-cat "mystery/interviews/interview_$INTERVIEW_ID"  
+export INTERVIEW_ID=$(head -n 179 streets/Buckingham_Place | tail -n 1 | cut -d'#' -f2)
+echo "$INTERVIEW_ID" 
+cat interviews/interview-$INTERVIEW_ID
 echo "$MAIN_SUSPECT"
