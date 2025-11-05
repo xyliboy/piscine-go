@@ -1,11 +1,9 @@
 package main
 
-import "github.com/01-edu/z01"
+import (
+	"fmt"
+)
 
 func main() {
-	alphabet := "abcdefghijklmnopqrstuvwxyz"
-
-	for _, ch := range alphabet {
-		z01.PrintRune(ch)
-	}
+	fmt.Println("abcdefghijklmnopqrstuvwxyz")
 }
