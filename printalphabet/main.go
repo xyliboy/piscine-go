@@ -1,7 +1,11 @@
 package main
 
-import "os"
+import "github.com/01-edu/z01"
 
 func main() {
-	os.Stdout.Write([]byte("hello world\n"))
+	alphabet := "abcdefghijklmnopqrstuvwxyz"
+
+	for _, ch := range alphabet {
+		z01.PrintRune(ch)
+	}
 }
