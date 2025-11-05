@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "os"
 
 func main() {
-	fmt.Println("abcdefghijklmnopqrstuvwxyz")
+	os.Stdout.Write([]byte("hello world\n"))
 }
