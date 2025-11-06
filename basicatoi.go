@@ -1,11 +1,10 @@
 package piscine
 
 func BasicAtoi(s string) int {
-	length := len(s)
 	result := 0
-	for i := 0; i < length; i++ {
+	for i := 0; i < len(s); i++ {
 		char := s[i]
-		if char < '0' || char > 9 {
+		if char < '0' || char > '9' {
 			return 0
 		}
 		result = result*10 + int(char-'0')
