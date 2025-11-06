@@ -1,6 +1,8 @@
-package main
+package piscine
 
-import one
+import "github.com/01-edu/z01"
 
-ptr := &one
-*ptr := 1
+func PointOne(n *int) {
+	*n = 1
+	z01.PrintRune('n')
+}
