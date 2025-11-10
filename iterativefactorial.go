@@ -13,6 +13,7 @@ func IterativeFactorial(nb int) int {
 	}
 	if sum < 0 {
 		return 0
+	} else {
+		return sum
 	}
-	return sum
 }
