@@ -5,8 +5,9 @@ func IterativeFactorial(nb int) int {
 		return 0
 	}
 
-	sum := 1
-	if nb > 1 {
+	sum := 0
+	if nb >= 1 {
+		sum = 1
 		for i := 2; i <= nb; i++ {
 			sum = sum * i
 		}
