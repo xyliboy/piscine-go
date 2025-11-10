@@ -8,6 +8,10 @@ func IterativeFactorial(nb int) int {
 	if nb == 0 || nb == 1 {
 		return 0
 	}
+	if nb > 20 {
+		return 0
+	}
+
 	if nb > 1 && nb <= 20 {
 		for i := 2; i <= nb; i++ {
 			sum = sum * i
