@@ -6,7 +6,7 @@ func IterativeFactorial(nb int) int {
 	}
 
 	sum := 0
-	if nb >= 1 {
+	if nb >= 1 && nb <= 20 {
 		sum = 1
 		for i := 2; i <= nb; i++ {
 			sum = sum * i
