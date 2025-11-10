@@ -11,6 +11,8 @@ func IterativeFactorial(nb int) int {
 			sum = sum * i
 		}
 	}
-
+	if sum < 0 {
+		return 0
+	}
 	return sum
 }
