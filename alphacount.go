@@ -1,7 +1,7 @@
 package piscine
 
 func AlphaCount(s string) int {
-	runes := []rune(s)
-	length := len(runes)
+	Runes := []rune(s)
+	length := len(Runes)
 	return length
 }
