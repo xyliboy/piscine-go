@@ -6,7 +6,7 @@ func NRune(s string, n int) rune {
 	for range s {
 		i++
 	}
-	if n == 1 && i >= 0 {
+	if n == i && i >= 0 {
 		return runes[n]
 	}
 	return 0
