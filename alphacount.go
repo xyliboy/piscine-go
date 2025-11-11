@@ -6,5 +6,12 @@ func AlphaCount(s string) int {
 	if s == " " {
 		return 0
 	}
+	i := 0
+	for range s {
+		if Runes[i] == ' ' {
+			length = length - 1
+			i++
+		}
+	}
 	return length
 }
