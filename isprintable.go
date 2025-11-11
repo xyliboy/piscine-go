@@ -2,12 +2,17 @@ package piscine
 
 func IsPrintable(s string) bool {
 	runes := []rune(s)
+	length := len(runes)
 	i := 0
+	j := 0
 	for range s {
-		if runes[i] <= '0' || runes[i] > '0' {
-			return true
+		if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z') || (s[i] <= '9' && s[i] >= '0') {
+			j++
 		}
 		i++
+	}
+	if length == j {
+		return true
 	}
 	return false
 }
