@@ -8,8 +8,8 @@ func Index(s string, toFind string) int {
 	j := 0
 	for range s {
 		if runess[i] == runest[0] {
+			a := i
 			for range toFind {
-				a := i
 				if runess[a] == runest[j] {
 					j++
 					a++
