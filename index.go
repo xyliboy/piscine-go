@@ -3,7 +3,7 @@ package piscine
 func Index(s string, toFind string) int {
 	runess := []rune(s)
 	runest := []rune(toFind)
-	lengtht := len(toFind)
+	lengtht := len(runest)
 	i := 0
 	j := 0
 	for range s {
@@ -14,7 +14,6 @@ func Index(s string, toFind string) int {
 					j++
 					a++
 				}
-				return 0
 			}
 			if j == lengtht {
 				return i
