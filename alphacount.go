@@ -8,7 +8,7 @@ func AlphaCount(s string) int {
 	i := 0
 	length1 := 0
 	for range s {
-		if Runes[i] >= 'a' || Runes[i] <= 'Z' {
+		if Runes[i] >= 'a' && Runes[i] <= 'z' || Runes[i] <= 'Z' && Runes[i] >= 'A' {
 			length1 = length1 + 1
 			i++
 		}
