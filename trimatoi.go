@@ -1,18 +1,13 @@
 package piscine
 
 func TrimAtoi(s string) int {
-	sign := 1
-	n := 0
+	result := 0
 	found := false
 
-	for _, r := range s {
-		if r == '-' && !found {
-			sign = -1
-		} else if r >= '0' && r <= '9' {
+	for i := 0; i < len(s); i++ {
+		if s[i] >= '0' && s[i] <= '9' {
 			found = true
-			n = n*10 + int(r-'0')
-		} else if found {
-			return 0
+			result = result*10 + int(s[i]-'0')
 		}
 	}
 
@@ -20,5 +15,5 @@ func TrimAtoi(s string) int {
 		return 0
 	}
 
-	return n * sign
+	return result
 }
