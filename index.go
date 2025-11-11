@@ -14,6 +14,7 @@ func Index(s string, toFind string) int {
 					j++
 					a++
 				}
+				return 0
 			}
 			if j == lengtht {
 				return i
