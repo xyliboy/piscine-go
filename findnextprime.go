@@ -14,8 +14,6 @@ func FindNextPrime(n int) bool {
 	}
 	return true
 }
-
-// Βρίσκει τον πρώτο πρώτο αριθμό ≥ nb
 func NextPrime(nb int) int {
 	for {
 		if IsPrime(nb) {
