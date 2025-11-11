@@ -6,7 +6,7 @@ func ToUpper(s string) string {
 		i := 0
 		for range s {
 			if runes[i] >= 'a' || runes[i] <= 'z' {
-				runes[i] = runes[i] + 64
+				runes[i] += runes[i-32]
 			}
 		}
 	}
