@@ -1,19 +1,19 @@
 package piscine
 
-// Ελέγχει αν ένας αριθμός είναι πρώτος
-func FindNextPrime(n int) bool {
-	if n <= 1 {
+func FindNextPrime(nb int) bool {
+	if nb <= 1 {
 		return false
 	}
 	i := 2
-	for i < n {
-		if n%i == 0 {
+	for i < nb {
+		if nb%i == 0 {
 			return false
 		}
 		i++
 	}
 	return true
 }
+
 func NextPrime(nb int) int {
 	for {
 		if IsPrime(nb) {
