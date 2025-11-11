@@ -1,9 +1,9 @@
 package piscine
 
-func BasicJoin(args ...string) string {
+func BasicJoin(elems []string) string {
 	result := ""
-	for i := 0; i < len(args); i++ {
-		result += args[i]
+	for _, s := range elems {
+		result += s
 	}
 	return result
 }
