@@ -7,6 +7,9 @@ func Index(s string, toFind string) int {
 	lengtht := len(runest)
 	i := 0
 	j := 0
+	if toFind == "" {
+		return 0
+	}
 	if lengths > 0 && lengtht > 0 {
 		for range s {
 			if runess[i] == runest[0] && toFind != " " {
