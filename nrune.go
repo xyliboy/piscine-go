@@ -1,6 +1,6 @@
 package piscine
 
-func Nrune(s string, n int) rune {
+func NRune(s string, n int) rune {
 	i := -1
 	runes := []rune(s)
 	for range s {
