@@ -1,4 +1,4 @@
-package printparams
+package main
 
 import (
 	"os" // για να πάρουμε το path του προγράμματος
