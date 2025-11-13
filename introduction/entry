@@ -1,0 +1,4 @@
+git config --global credential.helper store
+git clone https://platform.zone01.gr/git/gxylinas/piscine-go.git
+ git config --global user.email "woodengeorgio@gmail.com"
+ git config --global user.name "gxylinas"
