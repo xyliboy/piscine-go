@@ -20,11 +20,10 @@ func parseCount(s string) int {
 func main() {
 	args := os.Args[1:]
 
-	// Περιμένουμε τουλάχιστον: -c <count> <file>
+	// περιμένουμε: -c <count> <file...>
 	if len(args) < 3 {
 		return
 	}
-
 	if args[0] != "-c" {
 		return
 	}
@@ -37,11 +36,11 @@ func main() {
 	files := args[2:]
 	multiple := len(files) > 1
 	hadError := false
-	firstPrinted := false
 
-	for _, name := range files {
+	for i, name := range files {
 		f, err := os.Open(name)
 		if err != nil {
+			// τυπώνουμε το error, αλλά συνεχίζουμε στα υπόλοιπα αρχεία
 			fmt.Printf("%v\n", err)
 			hadError = true
 			continue
@@ -55,12 +54,13 @@ func main() {
 			continue
 		}
 
+		// header για πολλά αρχεία
 		if multiple {
-			if firstPrinted {
+			if i > 0 {
+				// πάντα κενή γραμμή πριν από ΚΑΘΕ header από το δεύτερο και μετά
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %s <==\n", name)
-			firstPrinted = true
 		}
 
 		size := info.Size()
