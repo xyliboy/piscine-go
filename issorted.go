@@ -19,7 +19,7 @@ func IsSorted(f func(a, b int) int, a []int) bool {
 		}
 
 	}
-	if countp < counti || countm < counti {
+	if countp < counti && countm < counti {
 		return false
 	}
 	return true
