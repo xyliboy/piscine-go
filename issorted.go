@@ -1,20 +1,25 @@
 package piscine
 
-func f(a, b int) int {
+func first(a, b int) int {
 	dif := a - b
 	return dif
 }
 
 func IsSorted(f func(a, b int) int, a []int) bool {
 	counti := 0
-	count := 0
-	for _, i := range a {
+	countm := 0
+	countp := 0
+	for i := 0; i < len(a)-1; i++ {
 		counti++
-		if f(i, i+1) >= 0 {
-			count = count + 1
+		if f(a[i], a[i+1]) >= 0 {
+			countp = countp + 1
 		}
+		if f(a[i], a[i+1]) <= 0 {
+			countm++
+		}
+
 	}
-	if count < counti {
+	if countp < counti || countm < counti {
 		return false
 	}
 	return true
