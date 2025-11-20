@@ -10,8 +10,10 @@ func DescendComb() {
 			z01.PrintRune(' ')
 			z01.PrintRune(rune(b/10 + '0'))
 			z01.PrintRune(rune(b%10 + '0'))
-			z01.PrintRune(',')
-			z01.PrintRune(' ')
+			if !(a == 0o1 && b == 0o0) {
+				z01.PrintRune(',')
+				z01.PrintRune(' ')
+			}
 		}
 	}
 }
