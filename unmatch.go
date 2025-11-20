@@ -1,7 +1,7 @@
 package piscine
 
 func Unmatch(a []int) int {
-	count := 1
+	count := 0
 	met := 0
 	for i := range a {
 		for j := range a {
@@ -17,7 +17,6 @@ func Unmatch(a []int) int {
 			met = i
 			return a[met]
 		}
-
 	}
 
 	return -1
