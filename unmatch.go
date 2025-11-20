@@ -8,17 +8,16 @@ func Unmatch(a []int) int {
 			if i != j {
 				if a[i] == a[j] {
 					count = 0
-					met = 0
 				} else {
 					count++
-					met = i
 				}
 			}
 		}
+		if count != 0 {
+			met = i
+			return a[met]
+		}
 	}
-	if count == 0 {
-		return -1
-	} else {
-		return a[met]
-	}
+
+	return -1
 }
