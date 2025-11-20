@@ -3,18 +3,21 @@ package piscine
 func ShoppingSummaryCounter(str string) map[string]int {
 	lista := map[string]int{}
 	word := ""
-	for _, ch := range str { // περνάω χαρακτήρα-χαρακτήρα το string
-		if ch != ' ' { // όσο δεν είναι space, συνεχίζω το χτίσιμο
+
+	for _, ch := range str {
+		if ch != ' ' && ch != '\t' && ch != '\n' && ch != '\r' {
 			word = word + string(ch)
-		} else { // όταν βρω space, η λέξη τελείωσε
-			if word != "" { // αν όντως υπάρχει λέξη
+		} else {
+			if word != "" {
 				lista[word]++
-				word = "" // καθαρίζω τη λέξη για την επόμενη
+				word = ""
 			}
 		}
 	}
-	if word != "" { // καταγράφω την τελευταία λέξη
+
+	if word != "" {
 		lista[word]++
 	}
+
 	return lista
 }
