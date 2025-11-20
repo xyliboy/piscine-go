@@ -5,38 +5,23 @@ type food struct {
 }
 
 func FoodDeliveryTime(order string) int {
-	faghto := food{}
-	fai := 0
-	count := 0
-	for i := 0; i < len(order); i++ {
-		if order[i] != ' ' {
-			count++
+	if order == "burger" {
+		burger := food{
+			preptime: 15,
 		}
-		if order[i] == ' ' {
-			if count == 6 {
-				fai = fai + 15
-			}
-			if count == 5 {
-				fai = fai + 10
-			}
-			if count == 7 {
-				fai = fai + 12
-			}
-			count = 0
-		}
-		if i == len(order)-1 {
-			if count == 6 {
-				fai = fai + 15
-			}
-			if count == 5 {
-				fai = fai + 10
-			}
-			if count == 7 {
-				fai = fai + 12
-			}
-		}
-
+		return burger.preptime
 	}
-	faghto.preptime = fai
-	return faghto.preptime
+	if order == "chips" {
+		chips := food{
+			preptime: 10,
+		}
+		return chips.preptime
+	}
+	if order == "nuggets" {
+		nuggets := food{
+			preptime: 12,
+		}
+		return nuggets.preptime
+	}
+	return 404
 }
