@@ -5,8 +5,8 @@ func Enigma(a ***int, b *int, c *******int, d ****int) {
 	dyo := *b
 	tria := *******c
 	tes := ****d
-	***a = tria
-	*******c = tes
-	****d = dyo
-	*b = ena
+	***a = dyo
+	*******c = ena
+	****d = tria
+	*b = tes
 }
