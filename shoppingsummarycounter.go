@@ -5,8 +5,8 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	word := ""
 
 	for _, ch := range str {
-		if ch != ' ' && ch != '\t' && ch != '\n' && ch != '\r' {
-			word = word + string(ch)
+		if (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') {
+			word += string(ch)
 		} else {
 			if word != "" {
 				lista[word]++
