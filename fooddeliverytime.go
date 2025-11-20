@@ -8,7 +8,7 @@ func FoodDeliveryTime(order string) int {
 	faghto := food{}
 	fai := 0
 	count := 0
-	for i := range order {
+	for i := 0; i < len(order); i++ {
 		if order[i] != ' ' {
 			count++
 		}
@@ -23,6 +23,17 @@ func FoodDeliveryTime(order string) int {
 				fai = fai + 12
 			}
 			count = 0
+		}
+		if i == len(order)-1 {
+			if count == 6 {
+				fai = fai + 15
+			}
+			if count == 5 {
+				fai = fai + 10
+			}
+			if count == 7 {
+				fai = fai + 12
+			}
 		}
 
 	}
