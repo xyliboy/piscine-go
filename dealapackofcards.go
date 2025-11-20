@@ -7,23 +7,33 @@ import (
 )
 
 func DealAPackOfCards(deck []int) {
-	var arr [12]int
-	count := 0
-	for i := 0; i < 12; i += 3 {
-		count++
-		fmt.Print("Player")
-		z01.PrintRune(rune(count))
-		z01.PrintRune(':')
-		for j := i; j <= i+2; j++ {
-			z01.PrintRune(' ')
-			z01.PrintRune(rune(arr[j]))
-			if (j+1)%3 != 0 {
-				z01.PrintRune(',')
-			}
+	// 4 παίκτες, 3 κάρτες ο καθένας
+	for player := 1; player <= 4; player++ {
 
+		// fmt για να γράψουμε "Player X:"
+		fmt.Print("Player ", player, ":")
+
+		// Από που έως που παίρνει κάρτες ο παίκτης
+		start := (player - 1) * 3
+		end := start + 3
+
+		fmt.Print(" [") // αρχή λίστας καρτών
+
+		// Μοίρασμα 3 καρτών ανά παίκτη
+		for i := start; i < end; i++ {
+
+			// Εκτύπωση αριθμού με fmt
+			fmt.Print(deck[i])
+
+			// Αν δεν είναι η τελευταία κάρτα, βάζουμε κόμμα
+			if i < end-1 {
+				fmt.Print(", ")
+			}
 		}
-		if i != 9 {
-			z01.PrintRune('\n')
-		}
+
+		fmt.Print("]")
+
+		// Νέα γραμμή με z01 (για να χρησιμοποιήσουμε και z01 όπως θες)
+		z01.PrintRune('\n')
 	}
 }
