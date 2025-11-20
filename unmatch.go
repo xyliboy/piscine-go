@@ -16,7 +16,7 @@ func Unmatch(a []int) int {
 			}
 		}
 	}
-	if met == ' ' {
+	if count == 0 {
 		return -1
 	} else {
 		return a[met]
