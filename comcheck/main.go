@@ -1,4 +1,4 @@
-package comcheck
+package main
 
 import (
 	"fmt"
