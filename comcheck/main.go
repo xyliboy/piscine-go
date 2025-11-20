@@ -7,8 +7,8 @@ import (
 
 func ComCheck() {
 	leksi := os.Args[1:]
-	for i := range leksi {
-		if leksi[i] == "01" || leksi[i] == "galaxy" || leksi[i] == "galaxy 01" {
+	for _, i := range leksi {
+		if i == "01" || i == "galaxy" || i == "galaxy 01" {
 			fmt.Println("Alert!!!")
 			break
 		}
