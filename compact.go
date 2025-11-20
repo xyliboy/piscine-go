@@ -8,5 +8,6 @@ func Compact(ptr *[]string) int {
 			katharo = append(katharo, i)
 		}
 	}
+	*ptr = katharo
 	return len(katharo)
 }
