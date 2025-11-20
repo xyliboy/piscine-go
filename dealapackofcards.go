@@ -3,11 +3,11 @@ package piscine
 import "fmt"
 
 func DealAPackOfCards(deck []int) {
-	player := 1
 	index := 0
+	player := 1
 
 	for player <= 4 {
-		fmt.Printf("Player %d: [%d, %d, %d]\n",
+		fmt.Printf("Player %d: %d, %d, %d\n",
 			player,
 			deck[index],
 			deck[index+1],
