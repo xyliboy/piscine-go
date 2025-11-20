@@ -2,16 +2,16 @@ package piscine
 
 func Unmatch(a []int) int {
 	count := 0
-	met := ' '
+	met := 0
 	for i := range a {
 		for j := range a {
 			if i != j {
 				if a[i] == a[j] {
 					count = 0
-					met = ' '
+					met = 0
 				} else {
 					count++
-					met = 'i'
+					met = i
 				}
 			}
 		}
@@ -19,6 +19,6 @@ func Unmatch(a []int) int {
 	if count == 0 {
 		return -1
 	} else {
-		return a[int(met)]
+		return a[met]
 	}
 }
