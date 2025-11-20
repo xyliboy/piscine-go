@@ -11,7 +11,7 @@ func Unmatch(a []int) int {
 					met = ' '
 				} else {
 					count++
-					met = rune(a[i] + '0')
+					met = 'i'
 				}
 			}
 		}
@@ -19,6 +19,6 @@ func Unmatch(a []int) int {
 	if met == ' ' {
 		return -1
 	} else {
-		return int(met)
+		return a[met]
 	}
 }
