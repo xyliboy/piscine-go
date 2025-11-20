@@ -1,39 +1,49 @@
 package piscine
 
-import (
-	"fmt"
+import "github.com/01-edu/z01"
 
-	"github.com/01-edu/z01"
-)
+func printString(s string) {
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
+}
+
+func printInt(n int) {
+	if n == 0 {
+		z01.PrintRune('0')
+		return
+	}
+	if n < 0 {
+		z01.PrintRune('-')
+		n = -n
+	}
+	digits := []rune{}
+	for n > 0 {
+		digits = append(digits, rune(n%10+'0'))
+		n /= 10
+	}
+	for i := len(digits) - 1; i >= 0; i-- {
+		z01.PrintRune(digits[i])
+	}
+}
 
 func DealAPackOfCards(deck []int) {
-	// 4 παίκτες, 3 κάρτες ο καθένας
-	for player := 1; player <= 4; player++ {
+	player := 1
 
-		// fmt για να γράψουμε "Player X:"
-		fmt.Print("Player ", player, ":")
+	for i := 0; i < 12; i += 3 {
+		// Player X:
+		printString("Player ")
+		printInt(player)
+		printString(": [")
 
-		// Από που έως που παίρνει κάρτες ο παίκτης
-		start := (player - 1) * 3
-		end := start + 3
+		// Τα 3 χαρτιά
+		printInt(deck[i])
+		printString(", ")
+		printInt(deck[i+1])
+		printString(", ")
+		printInt(deck[i+2])
 
-		fmt.Print(" [") // αρχή λίστας καρτών
-
-		// Μοίρασμα 3 καρτών ανά παίκτη
-		for i := start; i < end; i++ {
-
-			// Εκτύπωση αριθμού με fmt
-			fmt.Print(deck[i])
-
-			// Αν δεν είναι η τελευταία κάρτα, βάζουμε κόμμα
-			if i < end-1 {
-				fmt.Print(", ")
-			}
-		}
-
-		fmt.Print("]")
-
-		// Νέα γραμμή με z01 (για να χρησιμοποιήσουμε και z01 όπως θες)
-		z01.PrintRune('\n')
+		printString("]\n")
+		player++
 	}
 }
