@@ -1,33 +1,23 @@
-package piscine
+// package piscine
 
-func Unmatch(a []int) int {
-	for i := range a {
-		count := 0
-		for j := range a {
-			if i != j {
-				if a[i] == a[j] {
-					count++
-				}
-			}
-			if count == 0 {
-				return a[i]
-			}
-		}
-	}
-	return -1
-}
-
-
-
-
-
-
-
-
-
-
-
-
+// func Unmatch(a []int) int {
+// 	met := 0
+// 	for i := range a {
+// 		count := 0
+// 		for j := range a {
+// 			if i != j {
+// 				if a[i] == a[j] {
+// 					count++
+// 				}
+// 			}
+// 			if count == 0 {
+// 				met = i
+// 				return a[met]
+// 			}
+// 		}
+// 	}
+// 	return -1
+// }
 
 package piscine
 
