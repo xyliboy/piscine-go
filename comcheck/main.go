@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
-func ComCheck() {
+func main() {
 	leksi := os.Args[1:]
-	for _, j := range leksi {
-		if j == "01" || j == "galaxy" || j == "galaxy 01" {
+	for i := range leksi {
+		if leksi[i] == "01" || leksi[i] == "galaxy" || leksi[i] == "galaxy 01" {
 			fmt.Println("Alert!!!")
 			break
 		}
