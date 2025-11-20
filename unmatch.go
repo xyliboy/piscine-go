@@ -19,6 +19,6 @@ func Unmatch(a []int) int {
 	if count == 0 {
 		return -1
 	} else {
-		return a[met]
+		return a[int(met)]
 	}
 }
