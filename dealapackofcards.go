@@ -11,7 +11,7 @@ func DealAPackOfCards(deck []int) {
 	count := 0
 	for i := 0; i < 12; i += 3 {
 		count++
-		fmt.Println("Player")
+		fmt.Print("Player")
 		z01.PrintRune(rune(count))
 		z01.PrintRune(':')
 		for j := i; j <= i+2; j++ {
