@@ -11,9 +11,12 @@ func DescendComb() {
 			z01.PrintRune(' ')
 		}
 	}
+
 	for x := 9; x > 0; x-- {
 		z01.PrintRune('0')
 		z01.PrintRune(rune(x))
+		z01.PrintRune(',')
+		z01.PrintRune(' ')
 	}
 	z01.PrintRune('0')
 	z01.PrintRune('0')
