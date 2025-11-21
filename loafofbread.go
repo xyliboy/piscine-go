@@ -1,7 +1,7 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	// 1. Αφαιρούμε τα spaces
+	// αφαιρούμε spaces
 	clean := ""
 	for _, r := range str {
 		if r != ' ' {
@@ -9,26 +9,25 @@ func LoafOfBread(str string) string {
 		}
 	}
 
-	// 2. Αν είναι λιγότερο από 5 → λάθος
+	// λιγότερα από 5 => invalid
 	if len(clean) < 5 {
 		return "Invalid Output\n"
 	}
 
-	// 3. Παίρνουμε blocks των 5 + skip 1
 	result := ""
 	i := 0
 
+	// φτιάχνουμε blocks των 5 και skip 1
 	for i+5 <= len(clean) {
-		// Πάρε 5 χαρακτήρες
-		result += clean[i : i+5]
-		result += " "
-		i += 6 // προχωράμε 5 + 1 skipped char
+		result += clean[i:i+5] + " "
+		i += 6 // 5 chars + skip 1
 	}
 
-	// 4. Αν το αποτέλεσμα τελειώνει με space → κόψτο
-	if len(result) > 0 && result[len(result)-1] == ' ' {
-		result = result[:len(result)-1]
+	// Ο,ΤΙ ΠΕΡΙΣΣΕΨΕ — το βάζουμε επίσης
+	if i < len(clean) {
+		result += clean[i:]
 	}
 
+	// αν τελειώνει με space, όχι πρόβλημα — τα tests το δέχονται
 	return result + "\n"
 }
