@@ -1,23 +1,12 @@
-package main
+package piscine
 
-import "fmt"
-
-// Προσθέτουμε μόνο αυτό που λείπει:
-type Pilot struct {
-	Name     string
-	Life     float64
-	Age      int
-	Aircraft int
+func Join(strs []string, sep string) string {
+	result := ""
+	for i, s := range strs {
+		result += s
+		if i != len(strs)-1 {
+			result += sep
+		}
+	}
+	return result
 }
-
-func main() {
-	var donnie Pilot
-	donnie.Name = "Donnie"
-	donnie.Life = 100.0
-	donnie.Age = 24
-	donnie.Aircraft = AIRCRAFT1
-
-	fmt.Println(donnie)
-}
-
-const AIRCRAFT1 = 1
