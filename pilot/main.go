@@ -1,12 +1,25 @@
-package piscine
+package main
 
-func Join(strs []string, sep string) string {
-	result := ""
-	for i, s := range strs {
-		result += s
-		if i != len(strs)-1 {
-			result += sep
-		}
-	}
-	return result
+import "fmt"
+
+// ➜ ΠΡΟΣΘΕΤΟΥΜΕ μόνο αυτό:
+type Pilot struct {
+	Name     string
+	Life     float64
+	Age      int
+	Aircraft int
 }
+
+// ➜ ΤΕΛΟΣ προσθήκης
+
+func main() {
+	var donnie Pilot
+	donnie.Name = "Donnie"
+	donnie.Life = 100.0
+	donnie.Age = 24
+	donnie.Aircraft = AIRCRAFT1
+
+	fmt.Println(donnie)
+}
+
+const AIRCRAFT1 = 1
