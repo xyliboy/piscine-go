@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-// ➜ ΠΡΟΣΘΕΤΟΥΜΕ μόνο αυτό:
 type Pilot struct {
 	Name     string
 	Life     float64
@@ -10,7 +9,7 @@ type Pilot struct {
 	Aircraft int
 }
 
-// ➜ ΤΕΛΟΣ προσθήκης
+const AIRCRAFT1 = 1
 
 func main() {
 	var donnie Pilot
@@ -21,5 +20,3 @@ func main() {
 
 	fmt.Println(donnie)
 }
-
-const AIRCRAFT1 = 1
