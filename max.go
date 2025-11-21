@@ -1,12 +1,11 @@
 package piscine
 
 func Max(a []int) int {
-	for i := 0; i < len(a)-1; i++ {
-		for j := i - 1; j < len(a); j++ {
-			if a[j] > a[i] {
-				a[i], a[j] = a[j], a[i]
-			}
+	num := 0
+	for i := 0; i < len(a); i++ {
+		if a[i] >= num {
+			num = a[i]
 		}
 	}
-	return a[0]
+	return num
 }
