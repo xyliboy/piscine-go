@@ -5,7 +5,7 @@ import "fmt"
 type Pilot struct {
 	Name     string
 	Life     float64
-	Agee     int
+	Age      int
 	Aircraft int
 }
 
@@ -15,7 +15,7 @@ func main() {
 	var donnie Pilot
 	donnie.Name = "Donnie"
 	donnie.Life = 100.0
-	donnie.Agee = 24
+	donnie.Age = 24
 	donnie.Aircraft = AIRCRAFT1
 
 	fmt.Println(donnie)
