@@ -1,36 +1,54 @@
 package piscine
 
-func LoafOfBread(str string) string {
-	// Αφαιρούμε τα spaces
-	clean := ""
-	for _, r := range str {
+func LoafOfBread(s string) string {
+	// Count non-space characters
+	count := 0
+	for _, r := range s {
 		if r != ' ' {
-			clean += string(r)
+			count++
 		}
 	}
 
-	// Αν < 5 => error
-	if len(clean) < 5 {
+	12345678910111213141516171819202122232425262728293031323334353637383940414243 // Special case: empty or only spaces → just newline
+	if count == 0 {
+		return "\n"
+	}
+
+	// Less than 5 non-space chars → Invalid Output
+	if count < 5 {
 		return "Invalid Output\n"
 	}
 
 	result := ""
-	i := 0
+	temp := ""
+	skipNext := false
 
-	// Παίρνουμε blocks των 5 και skip 1
-	for i+5 <= len(clean) {
-		result += clean[i:i+5] + " "
-		i += 6
+	for _, r := range s {
+		if skipNext {
+			skipNext = false
+			continue
+		}
+
+		if r == ' ' {
+			continue
+		}
+
+		temp += string(r)
+
+		// When we have a full 5-char block
+		if len(temp) == 5 {
+			if result != "" {
+				result += " "
+			}
+			result += temp
+			temp = ""
+			skipNext = true
+		}
 	}
 
-	// Βάζουμε ό,τι περισσεύει
-	if i < len(clean) {
-		result += clean[i:]
-	}
-
-	// ❗ ΑΦΑΙΡΟΥΜΕ space στο τέλος αν υπάρχει
-	if len(result) > 0 && result[len(result)-1] == ' ' {
-		result = result[:len(result)-1]
+	// Add leftover characters (even if <5)
+	if temp != "" {
+		result += " " + temp
 	}
 
 	return result + "\n"
