@@ -9,7 +9,7 @@ func LoafOfBread(s string) string {
 		}
 	}
 
-	12345678910111213141516171819202122232425262728293031323334353637383940414243 // Special case: empty or only spaces → just newline
+	// Special case: empty or only spaces → just newline
 	if count == 0 {
 		return "\n"
 	}
