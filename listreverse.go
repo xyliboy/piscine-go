@@ -15,7 +15,7 @@ func ListReverse(l *List) {
 	current := l.Head
 	var next *NodeL = nil
 
-	if current != nil {
+	for current != nil {
 		next = current.Next
 		current.Next = prev
 		prev = current
