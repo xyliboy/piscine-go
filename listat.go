@@ -6,7 +6,7 @@ type NodeL struct {
 }
 
 func ListAt(l *NodeL, pos int) *NodeL {
-	if pos <= 0 {
+	if pos < 0 {
 		return nil
 	}
 	current := l
