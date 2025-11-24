@@ -15,7 +15,6 @@ func ListSize(l *List) int {
 	if l.Tail == nil {
 		return num
 	}
-	num++
 	for l.Head != nil {
 		l.Head = l.Head.Next
 		num++
