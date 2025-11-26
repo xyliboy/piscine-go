@@ -1,5 +1,10 @@
 package piscine
 
+type NodeI struct {
+	Data int
+	Next *NodeI
+}
+
 func SortedListMerge(n1 *NodeI, n2 *NodeI) *NodeI {
 	if n1 == nil {
 		return n2
